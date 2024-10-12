@@ -24,36 +24,35 @@
     Project's home: http://pcapsipdump.sf.net/
 */
 
-#define PCAPSIPDUMP_VERSION "0.2"
+#define PCAPSIPDUMP_VERSION "1.0"
 
 struct iphdr {
 #if defined(__LITTLE_ENDIAN)
-	uint8_t	ihl:4,
-		version:4;
+   uint8_t ihl:4,
+      version:4;
 #elif defined (__BIG_ENDIAN)
-	uint8_t	version:4,
-  		ihl:4;
+   uint8_t version:4,
+        ihl:4;
 #else
 #error Endian not defined
 #endif
-	uint8_t	tos;
-	uint16_t	tot_len;
-	uint16_t	id;
-	uint16_t	frag_off;
-	uint8_t	ttl;
-	uint8_t	protocol;
-	uint16_t	check;
-	uint32_t	saddr;
-	uint32_t	daddr;
-	/*The options start here. */
+   uint8_t tos;
+   uint16_t tot_len;
+   uint16_t id;
+   uint16_t frag_off;
+   uint8_t ttl;
+   uint8_t protocol;
+   uint16_t check;
+   uint32_t saddr;
+   uint32_t daddr;
+   /*The options start here. */
 };
 
-
 struct udphdr {
-	uint16_t	source;
-	uint16_t	dest;
-	uint16_t	len;
-	uint16_t	check;
+   uint16_t source;
+   uint16_t dest;
+   uint16_t len;
+   uint16_t check;
 };
 
 #ifndef ETH_ALEN
@@ -62,7 +61,7 @@ struct udphdr {
 
 struct ether_header
 {
-  uint8_t  ether_dhost[ETH_ALEN];	/* destination eth addr	*/
-  uint8_t  ether_shost[ETH_ALEN];	/* source ether addr	*/
-  uint16_t ether_type;		        /* packet type ID field	*/
+  uint8_t  ether_dhost[ETH_ALEN]; /* destination eth addr */
+  uint8_t  ether_shost[ETH_ALEN]; /* source ether addr */
+  uint16_t ether_type;            /* packet type ID field */
 } __attribute__ ((__packed__));
