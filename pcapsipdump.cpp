@@ -495,7 +495,7 @@ int get_ip_port_from_sdp(char *sdp_text, in_addr_t *addr, unsigned short *port){
 }
 
 char * gettag(const void *ptr, unsigned long len, const char *tag, unsigned long *gettaglen){
-    unsigned long register r,l,tl;
+    unsigned long r,l,tl;
     char *rc;
 
     tl=strlen(tag);
